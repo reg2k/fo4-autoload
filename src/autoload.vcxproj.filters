@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Autoload.cpp" />
+    <ClCompile Include="rva\sscan\Pattern.cpp">
+      <Filter>rva\sscan</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="utils.h" />
+    <ClInclude Include="Config.h" />
+    <ClInclude Include="rva\RVA.h">
+      <Filter>rva</Filter>
+    </ClInclude>
+    <ClInclude Include="rva\sscan\Pattern.h">
+      <Filter>rva\sscan</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="rva">
+      <UniqueIdentifier>{2fe0e3c5-87db-4b73-982b-f0809fc23149}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rva\sscan">
+      <UniqueIdentifier>{a3309a33-54de-4118-aeb4-5e9a9299b68c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
