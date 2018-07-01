@@ -4,8 +4,8 @@
 //-----------------------
 // Plugin Information
 //-----------------------
-#define PLUGIN_VERSION              8
-#define PLUGIN_VERSION_STRING       "1.5.2"
+#define PLUGIN_VERSION              9
+#define PLUGIN_VERSION_STRING       "1.5.3"
 #define PLUGIN_NAME_SHORT           "autoload"
 #define PLUGIN_NAME_LONG            "Autoload"
 #define SUPPORTED_RUNTIME_VERSION   CURRENT_RELEASE_RUNTIME
