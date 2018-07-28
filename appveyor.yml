@@ -2,7 +2,10 @@ image: Visual Studio 2017
 
 environment:
   PYTHON: C:\Python34-x64
-  
+
+init:
+  - git config --global core.autocrlf true
+
 install:
   - git submodule update --init --recursive
 
@@ -11,7 +14,7 @@ build_script:
   - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
   - python --version
   - python build.py
-  
+
 artifacts:
   - path: build\x64\Release\*.dll
     name: DLL only
