@@ -83,6 +83,7 @@ bool loadAutosaves;
 bool loadQuicksaves;
 bool loadExitsaves;
 char fileToLoad[MAX_PATH];
+char savePathSpecified[MAX_PATH];
 char postLoadCommand[1024];
 bool holdShiftToEnable;
 bool focusOnLoad;
@@ -107,7 +108,17 @@ void doLoadGame() {
 		SHGetFolderPath(NULL, CSIDL_PERSONAL, NULL, SHGFP_TYPE_CURRENT, documentsFolder);
 
 		char savesDirectory[MAX_PATH];
-		snprintf(savesDirectory, MAX_PATH, "%s%s", documentsFolder, "\\My Games\\Fallout4\\Saves\\*.fos");
+		GetPrivateProfileString("Autoload", "sSavesPath", NULL, savePathSpecified, MAX_PATH, INI_LOCATION);
+		if (!savePathSpecified || strlen(savePathSpecified) == 0) {
+			snprintf(savesDirectory, MAX_PATH, "%s%s", documentsFolder, "\\My Games\\Fallout4\\Saves\\*.fos");
+		} else {
+			// There may be a more elegant solution here--I have never used snprintf()
+			if (strchr(savePathSpecified, ' ')) {
+				snprintf(savesDirectory, MAX_PATH, "\"%s\"", savePathSpecified);
+			} else {
+				snprintf(savesDirectory, MAX_PATH, "%s", savePathSpecified);
+			}
+		}
 
 		_MESSAGE("save directory: %s", savesDirectory);
 
