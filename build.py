@@ -4,7 +4,7 @@ import os, sys
 BUILD_DIR        = 'build'
 PROJECT_DIR      = 'src'
 PLATFORM_TOOLSET = 'v140'
-F4SE_REVISION    = 'tags/v0.6.11'
+F4SE_REVISION    = 'tags/v0.6.21'
 
 
 # Run build tools
